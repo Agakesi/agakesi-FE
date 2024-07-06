@@ -18,23 +18,23 @@ class AppTextFormFieldTheme {
     floatingLabelStyle:
         const TextStyle().copyWith(color: AppColors.black.withOpacity(0.8)),
     border: const OutlineInputBorder().copyWith(
-      borderRadius: BorderRadius.circular(AppSizes.inputFieldRadius),
+      borderRadius: BorderRadius.circular(AppSizes.borderRadiusMd),
       borderSide: const BorderSide(width: 1, color: AppColors.grey),
     ),
     enabledBorder: const OutlineInputBorder().copyWith(
-      borderRadius: BorderRadius.circular(AppSizes.inputFieldRadius),
+      borderRadius: BorderRadius.circular(AppSizes.borderRadiusMd),
       borderSide: const BorderSide(width: 1, color: AppColors.grey),
     ),
     focusedBorder: const OutlineInputBorder().copyWith(
-      borderRadius: BorderRadius.circular(AppSizes.inputFieldRadius),
+      borderRadius: BorderRadius.circular(AppSizes.borderRadiusMd),
       borderSide: const BorderSide(width: 1, color: AppColors.dark),
     ),
     errorBorder: const OutlineInputBorder().copyWith(
-      borderRadius: BorderRadius.circular(AppSizes.inputFieldRadius),
+      borderRadius: BorderRadius.circular(AppSizes.borderRadiusMd),
       borderSide: const BorderSide(width: 1, color: AppColors.error),
     ),
     focusedErrorBorder: const OutlineInputBorder().copyWith(
-      borderRadius: BorderRadius.circular(AppSizes.inputFieldRadius),
+      borderRadius: BorderRadius.circular(AppSizes.borderRadiusMd),
       borderSide: const BorderSide(width: 2, color: AppColors.warning),
     ),
   );
@@ -51,23 +51,23 @@ class AppTextFormFieldTheme {
     floatingLabelStyle:
         const TextStyle().copyWith(color: AppColors.white.withOpacity(0.8)),
     border: const OutlineInputBorder().copyWith(
-      borderRadius: BorderRadius.circular(AppSizes.inputFieldRadius),
+      borderRadius: BorderRadius.circular(AppSizes.borderRadiusMd),
       borderSide: const BorderSide(width: 1, color: AppColors.darkGrey),
     ),
     enabledBorder: const OutlineInputBorder().copyWith(
-      borderRadius: BorderRadius.circular(AppSizes.inputFieldRadius),
+      borderRadius: BorderRadius.circular(AppSizes.borderRadiusMd),
       borderSide: const BorderSide(width: 1, color: AppColors.darkGrey),
     ),
     focusedBorder: const OutlineInputBorder().copyWith(
-      borderRadius: BorderRadius.circular(AppSizes.inputFieldRadius),
+      borderRadius: BorderRadius.circular(AppSizes.borderRadiusMd),
       borderSide: const BorderSide(width: 1, color: AppColors.white),
     ),
     errorBorder: const OutlineInputBorder().copyWith(
-      borderRadius: BorderRadius.circular(AppSizes.inputFieldRadius),
+      borderRadius: BorderRadius.circular(AppSizes.borderRadiusMd),
       borderSide: const BorderSide(width: 1, color: AppColors.error),
     ),
     focusedErrorBorder: const OutlineInputBorder().copyWith(
-      borderRadius: BorderRadius.circular(AppSizes.inputFieldRadius),
+      borderRadius: BorderRadius.circular(AppSizes.borderRadiusMd),
       borderSide: const BorderSide(width: 2, color: AppColors.warning),
     ),
   );

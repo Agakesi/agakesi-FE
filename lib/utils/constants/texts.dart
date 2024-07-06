@@ -1,7 +1,18 @@
-class ChindiTexts {
-  ChindiTexts._();
+class AppTexts {
+  AppTexts._();
 
   /// AUTH
+  static const String welcomeBack = 'Welcome Back!';
+  static const String password = 'Password';
+  static const String forgotPassword = 'Forgot Password?';
+  static const String login = 'Login';
+  static const String signup = 'Sign Up';
+  static const String dontHaveAnAccount = 'Don\'t have an account?';
+  static const String loginWithGoogle = 'Login with Google';
+  static const String or = 'OR';
+
+  static const String enterYourPassword = 'Enter your password';
+  static const String enterYourEmailAddress = 'Enter your email address';
   static const String signupHeaderText = 'Let\'s create your account';
 
   /// PROFILE

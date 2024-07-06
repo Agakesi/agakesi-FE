@@ -4,7 +4,7 @@ class AppColors {
   AppColors._();
 
   // App theme colors
-  static Color primary = const Color(0xFF0B46FC);
+  static const Color primary = Color(0xFF0B46FC);
   static const Color secondary = Color.fromRGBO(51, 51, 51, 1);
   static const Color accent = Color(0xFFb0c7ff);
 
@@ -40,7 +40,7 @@ class AppColors {
   // Neutral Shades
   static const Color black = Color(0xFF232323);
   static const Color darkerGrey = Color(0xFF4F4F4F);
-  static const Color darkGrey = Color(0xFF939393);
+  static const Color darkGrey = Color(0xFF9CA3AF);
   static const Color grey = Color(0xFFE0E0E0);
   static const Color softGrey = Color(0xFFF4F4F4);
   static const Color lightGrey = Color(0xFFF9F9F9);
