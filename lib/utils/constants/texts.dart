@@ -11,6 +11,7 @@ class AppTexts {
   static const String loginWithGoogle = 'Login with Google';
   static const String or = 'OR';
 
+  static const String googleIconPath = 'assets/images/google-icon.png';
   static const String enterYourPassword = 'Enter your password';
   static const String enterYourEmailAddress = 'Enter your email address';
   static const String signupHeaderText = 'Let\'s create your account';

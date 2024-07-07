@@ -22,6 +22,7 @@ class SignIn extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 /// WELCOME BACK
+                // TODO: 'Discover limitiless savings options at unmatched convenience'
                 Text(
                   AppTexts.welcomeBack,
                   style: Theme.of(context)
@@ -53,16 +54,20 @@ class SignIn extends StatelessWidget {
                               BorderRadius.circular(8), // Border radius
                         ),
                       ),
-                      child: Row(
+                      child: const Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          SvgPicture.asset(
-                            'assets/icons/google-icon.svg',
-                            height: 24.0,
-                            width: 24.0,
+                          SizedBox(
+                            height: AppSizes.iconMd,
+                            width: AppSizes.iconMd,
+                            child: Image(
+                              image: AssetImage(
+                                AppTexts.googleIconPath,
+                              ),
+                            ),
                           ),
-                          const SizedBox(width: 8.0),
-                          const Text(AppTexts.loginWithGoogle),
+                          SizedBox(width: 8.0),
+                          Text(AppTexts.loginWithGoogle),
                         ],
                       ),
                     )),
