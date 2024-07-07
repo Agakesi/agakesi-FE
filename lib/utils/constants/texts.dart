@@ -2,7 +2,11 @@ class AppTexts {
   AppTexts._();
 
   /// AUTH
-  static const String welcomeBack = 'Welcome Back!';
+  static const String welcomeBack = 'Welcome back,';
+  static const String welcomeBackDiscover =
+      'Discover limitiless savings options at unmatched convenience.';
+  static const String welcomeBackExplore =
+      'Explore diverse savings options at unmatched convenience';
   static const String password = 'Password';
   static const String forgotPassword = 'Forgot Password?';
   static const String login = 'Login';

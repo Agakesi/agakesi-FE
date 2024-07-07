@@ -22,15 +22,26 @@ class SignIn extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 /// WELCOME BACK
-                // TODO: 'Discover limitiless savings options at unmatched convenience'
-                Text(
-                  AppTexts.welcomeBack,
-                  style: Theme.of(context)
-                      .textTheme
-                      .headlineMedium
-                      ?.copyWith(fontWeight: FontWeight.w700),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      AppTexts.welcomeBack,
+                      style: Theme.of(context)
+                          .textTheme
+                          .headlineMedium
+                          ?.copyWith(fontWeight: FontWeight.w700),
+                    ),
+                    Text(
+                      AppTexts.welcomeBackExplore,
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodySmall
+                          ?.copyWith(color: AppColors.darkGrey),
+                    )
+                  ],
                 ),
-                const SizedBox(height: AppSizes.defaultSpace),
+                const SizedBox(height: AppSizes.spaceBtwItems),
 
                 /// SIGN IN FORM FIELDS
                 _buildSignInFormFields(context),
