@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'screens/auth/sign_in.dart';
+import 'screens/auth/sign_up.dart';
+import 'utils/constants/texts.dart';
 import 'utils/theme/theme.dart';
 
 void main() {
@@ -16,7 +18,11 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: AGAppTheme.lightTheme,
       darkTheme: AGAppTheme.darkTheme,
-      home: const SignIn(),
+      debugShowCheckedModeBanner: false,
+      home: const SignUpScreen(),
+      routes: {
+        AppTexts.signupScreenRoute: (context) => const SignUpScreen(),
+      },
     );
   }
 }

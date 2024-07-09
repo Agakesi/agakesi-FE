@@ -4,14 +4,14 @@ import 'package:iconsax/iconsax.dart';
 import '../../utils/constants/sizes.dart';
 import '../../utils/constants/texts.dart';
 
-class SignIn extends StatelessWidget {
-  const SignIn({super.key});
+class SignInScreen extends StatelessWidget {
+  const SignInScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: SingleChildScrollView(
+    return Scaffold(
+      body: SafeArea(
+        child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(
               AppSizes.defaultSpace,
@@ -41,7 +41,7 @@ class SignIn extends StatelessWidget {
                 ),
                 const SizedBox(height: AppSizes.spaceBtwItems),
 
-                /// SIGN IN FORM FIELDS
+                /// SIGN IN FORM VIEW
                 SignInFormView(context: context),
                 const SizedBox(height: AppSizes.spaceBtwSections),
 
@@ -65,12 +65,20 @@ class SignIn extends StatelessWidget {
                           ?.copyWith(color: AppColors.darkerGrey),
                     ),
                     const SizedBox(width: AppSizes.xs),
-                    Text(
-                      AppTexts.signup,
-                      style: Theme.of(context)
-                          .textTheme
-                          .titleMedium
-                          ?.copyWith(color: AppColors.primary),
+
+                    /// SIGNUP TEXT
+                    GestureDetector(
+                      onTap: () async {
+                        await Navigator.of(context)
+                            .pushNamed(AppTexts.signupScreenRoute);
+                      },
+                      child: Text(
+                        AppTexts.signup,
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleMedium
+                            ?.copyWith(color: AppColors.primary),
+                      ),
                     ),
                   ],
                 )
@@ -98,6 +106,8 @@ class SignInFormView extends StatefulWidget {
 class _SignInFormViewState extends State<SignInFormView> {
   late final TextEditingController _emailTextController;
   late final TextEditingController _passwordTextController;
+
+  bool isObscured = true;
 
   @override
   void initState() {
@@ -153,13 +163,23 @@ class _SignInFormViewState extends State<SignInFormView> {
             ),
           ),
           TextFormField(
+            obscureText: isObscured,
             decoration: InputDecoration(
               hintText: AppTexts.enterYourPassword,
               hintStyle: Theme.of(context)
                   .textTheme
                   .bodySmall
                   ?.copyWith(color: AppColors.darkGrey),
-              suffixIcon: const Icon(Iconsax.eye_slash),
+              suffixIcon: IconButton(
+                onPressed: () {
+                  setState(() {
+                    isObscured = !isObscured;
+                  });
+                },
+                icon: isObscured
+                    ? const Icon(Iconsax.eye_slash)
+                    : const Icon(Iconsax.eye),
+              ),
               suffixIconColor: const Color(0xFF9CA3AF),
             ),
           ),
@@ -208,7 +228,7 @@ class LoginWithGoogle extends StatelessWidget {
             width: 1,
           ), // Border color and width
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8), // Border radius
+            borderRadius: BorderRadius.circular(AppSizes.sm),
           ),
         ),
         child: const Row(
@@ -223,7 +243,7 @@ class LoginWithGoogle extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(width: 8.0),
+            SizedBox(width: AppSizes.sm),
             Text(AppTexts.loginWithGoogle),
           ],
         ),
