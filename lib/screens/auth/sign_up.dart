@@ -120,25 +120,25 @@ class _SignUpFormViewState extends State<SignUpFormView> {
         children: <Widget>[
           /// FIRST NAME
           const SignUpInputTile(
-              inputHeader: AppTexts.firstname,
+              headerText: AppTexts.firstname,
               hintText: AppTexts.enterYourLastName),
           const SizedBox(height: AppSizes.spaceBtwItems),
 
           /// LAST NAME
           const SignUpInputTile(
-              inputHeader: AppTexts.lastname,
+              headerText: AppTexts.lastname,
               hintText: AppTexts.enterYourLastName),
           const SizedBox(height: AppSizes.spaceBtwItems),
 
           /// EMAIL
           const SignUpInputTile(
-              inputHeader: AppTexts.email,
+              headerText: AppTexts.email,
               hintText: AppTexts.enterYourEmailAddress),
           const SizedBox(height: AppSizes.spaceBtwItems),
 
           /// PHONE NUMBER
           const SignUpInputTile(
-              inputHeader: AppTexts.phoneNumber,
+              headerText: AppTexts.phoneNumber,
               hintText: AppTexts.enterYourPhoneNumber),
           const SizedBox(height: AppSizes.spaceBtwItems),
 
@@ -228,11 +228,11 @@ class InputPasswordTile extends StatelessWidget {
 class SignUpInputTile extends StatelessWidget {
   const SignUpInputTile({
     super.key,
-    required this.inputHeader,
+    required this.headerText,
     required this.hintText,
   });
 
-  final String inputHeader;
+  final String headerText;
   final String hintText;
 
   @override
@@ -243,7 +243,7 @@ class SignUpInputTile extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(bottom: AppSizes.sm),
           child: Text(
-            inputHeader,
+            headerText,
             style: Theme.of(context)
                 .textTheme
                 .bodyLarge
