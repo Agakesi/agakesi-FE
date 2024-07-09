@@ -212,7 +212,7 @@ class InputPasswordTile extends StatelessWidget {
                 .bodySmall
                 ?.copyWith(color: AppColors.darkGrey),
             suffixIcon: IconButton(
-              onPressed: () {},
+              onPressed: toggleObscureText,
               icon: isObscured
                   ? const Icon(Iconsax.eye_slash)
                   : const Icon(Iconsax.eye),
