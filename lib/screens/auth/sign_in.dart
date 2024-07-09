@@ -1,8 +1,6 @@
 import 'package:agakesi_fe/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:iconsax/iconsax.dart';
-
 import '../../utils/constants/sizes.dart';
 import '../../utils/constants/texts.dart';
 
@@ -44,44 +42,15 @@ class SignIn extends StatelessWidget {
                 const SizedBox(height: AppSizes.spaceBtwItems),
 
                 /// SIGN IN FORM FIELDS
-                _buildSignInFormFields(context),
+                SignInFormView(context: context),
+                const SizedBox(height: AppSizes.spaceBtwSections),
 
                 /// OR WITH DIVIDER
-                _buildDivider(context),
+                const DividerWidget(),
                 const SizedBox(height: AppSizes.spaceBtwSections),
 
                 /// LOGIN WITH GOOGLE
-                SizedBox(
-                    width: double.infinity,
-                    child: OutlinedButton(
-                      onPressed: () {},
-                      style: OutlinedButton.styleFrom(
-                        side: const BorderSide(
-                          color: AppColors.darkGrey,
-                          width: 1,
-                        ), // Border color and width
-                        shape: RoundedRectangleBorder(
-                          borderRadius:
-                              BorderRadius.circular(8), // Border radius
-                        ),
-                      ),
-                      child: const Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          SizedBox(
-                            height: AppSizes.iconMd,
-                            width: AppSizes.iconMd,
-                            child: Image(
-                              image: AssetImage(
-                                AppTexts.googleIconPath,
-                              ),
-                            ),
-                          ),
-                          SizedBox(width: 8.0),
-                          Text(AppTexts.loginWithGoogle),
-                        ],
-                      ),
-                    )),
+                const LoginWithGoogle(),
                 const SizedBox(height: AppSizes.spaceBtwSections),
 
                 /// DON'T HAVE ACCOUNT? SIGNUP
@@ -112,36 +81,40 @@ class SignIn extends StatelessWidget {
       ),
     );
   }
+}
 
-  Row _buildDivider(BuildContext context) {
-    return Row(
-      children: <Widget>[
-        const Flexible(
-          child: Divider(
-            color: AppColors.grey,
-            thickness: 0.5,
-            indent: 5,
-            endIndent: 20,
-          ),
-        ),
-        Text(AppTexts.or,
-            style: Theme.of(context)
-                .textTheme
-                .titleSmall
-                ?.copyWith(color: AppColors.darkGrey)),
-        const Flexible(
-          child: Divider(
-            color: AppColors.grey,
-            thickness: 0.5,
-            indent: 20,
-            endIndent: 5,
-          ),
-        )
-      ],
-    );
+class SignInFormView extends StatefulWidget {
+  const SignInFormView({
+    super.key,
+    required this.context,
+  });
+
+  final BuildContext context;
+
+  @override
+  State<SignInFormView> createState() => _SignInFormViewState();
+}
+
+class _SignInFormViewState extends State<SignInFormView> {
+  late final TextEditingController _emailTextController;
+  late final TextEditingController _passwordTextController;
+
+  @override
+  void initState() {
+    _emailTextController = TextEditingController();
+    _passwordTextController = TextEditingController();
+    super.initState();
   }
 
-  Widget _buildSignInFormFields(BuildContext context) {
+  @override
+  void dispose() {
+    _emailTextController.dispose();
+    _passwordTextController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Form(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -159,11 +132,12 @@ class SignIn extends StatelessWidget {
           ),
           TextFormField(
             decoration: InputDecoration(
-                hintText: AppTexts.enterYourEmailAddress,
-                hintStyle: Theme.of(context)
-                    .textTheme
-                    .bodySmall
-                    ?.copyWith(color: AppColors.darkGrey)),
+              hintText: AppTexts.enterYourEmailAddress,
+              hintStyle: Theme.of(context)
+                  .textTheme
+                  .bodySmall
+                  ?.copyWith(color: AppColors.darkGrey),
+            ),
           ),
           const SizedBox(height: AppSizes.spaceBtwItems),
 
@@ -211,9 +185,84 @@ class SignIn extends StatelessWidget {
               child: const Text(AppTexts.login),
             ),
           ),
-          const SizedBox(height: AppSizes.spaceBtwSections),
         ],
       ),
+    );
+  }
+}
+
+class LoginWithGoogle extends StatelessWidget {
+  const LoginWithGoogle({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: double.infinity,
+      child: OutlinedButton(
+        onPressed: () {},
+        style: OutlinedButton.styleFrom(
+          side: const BorderSide(
+            color: AppColors.darkGrey,
+            width: 1,
+          ), // Border color and width
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8), // Border radius
+          ),
+        ),
+        child: const Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SizedBox(
+              height: AppSizes.iconMd,
+              width: AppSizes.iconMd,
+              child: Image(
+                image: AssetImage(
+                  AppTexts.googleIconPath,
+                ),
+              ),
+            ),
+            SizedBox(width: 8.0),
+            Text(AppTexts.loginWithGoogle),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class DividerWidget extends StatelessWidget {
+  const DividerWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: <Widget>[
+        const Flexible(
+          child: Divider(
+            color: AppColors.grey,
+            thickness: 0.5,
+            indent: 5,
+            endIndent: 20,
+          ),
+        ),
+        Text(AppTexts.or,
+            style: Theme.of(context)
+                .textTheme
+                .titleSmall
+                ?.copyWith(color: AppColors.darkGrey)),
+        const Flexible(
+          child: Divider(
+            color: AppColors.grey,
+            thickness: 0.5,
+            indent: 20,
+            endIndent: 5,
+          ),
+        )
+      ],
     );
   }
 }
