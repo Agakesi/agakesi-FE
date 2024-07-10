@@ -164,14 +164,20 @@ class _SignInFormViewState extends State<SignInFormView> {
             ),
           ),
 
-          /// FORGOT BUTTON
-          const Padding(
-            padding: EdgeInsets.only(top: AppSizes.sm),
-            child: Align(
-              alignment: Alignment.topRight,
-              child: Text(
-                AppTexts.forgotPassword,
-                style: TextStyle(color: AppColors.primary),
+          /// FORGOT PASSWORD?
+          Padding(
+            padding: const EdgeInsets.only(top: AppSizes.sm),
+            child: GestureDetector(
+              onTap: () async {
+                await Navigator.of(context)
+                    .pushNamed(AppTexts.forgotPasswordScreenRoute);
+              },
+              child: const Align(
+                alignment: Alignment.topRight,
+                child: Text(
+                  AppTexts.forgotPassword,
+                  style: TextStyle(color: AppColors.primary),
+                ),
               ),
             ),
           ),

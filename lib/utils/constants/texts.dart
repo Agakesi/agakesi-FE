@@ -16,6 +16,8 @@ class AppTexts {
       'Discover limitiless savings options at unmatched convenience.';
   static const welcomeBackExplore =
       'Explore diverse savings options at unmatched convenience';
+  static const forgotPasswordHeaderSubText =
+      'Select verification method and we will send verification code.';
 
   static const password = 'Password';
   static const confirmPassword = 'Confirm Password';
@@ -51,6 +53,7 @@ class AppTexts {
   static const support = 'Support';
 
   /// ROUTES
-  static const signupScreenRoute = '/signup-screen';
-  static const signinScreenRoute = '/signin-screen';
+  static const signupScreenRoute = '/signup';
+  static const signinScreenRoute = '/signin';
+  static const forgotPasswordScreenRoute = '/forgot-password';
 }

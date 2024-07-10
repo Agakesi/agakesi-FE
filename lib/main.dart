@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'screens/auth/forgot_password.dart';
 import 'screens/auth/sign_in.dart';
 import 'screens/auth/sign_up.dart';
 import 'utils/constants/texts.dart';
@@ -19,10 +20,12 @@ class App extends StatelessWidget {
       theme: AGAppTheme.lightTheme,
       darkTheme: AGAppTheme.darkTheme,
       debugShowCheckedModeBanner: false,
-      home: const SignUpScreen(),
+      home: const SignInScreen(),
       routes: {
         AppTexts.signupScreenRoute: (context) => const SignUpScreen(),
         AppTexts.signinScreenRoute: (context) => const SignInScreen(),
+        AppTexts.forgotPasswordScreenRoute: (context) =>
+            const ForgotPasswordScreen(),
       },
     );
   }

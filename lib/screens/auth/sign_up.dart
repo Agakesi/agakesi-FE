@@ -253,7 +253,7 @@ class InputPasswordTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
+      children: <Widget>[
         Padding(
           padding: const EdgeInsets.only(bottom: AppSizes.sm),
           child: Text(
