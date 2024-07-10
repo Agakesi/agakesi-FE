@@ -1,5 +1,7 @@
+import 'package:agakesi_fe/screens/auth/reset_pswd_with_email.dart';
 import 'package:flutter/material.dart';
-import 'screens/auth/forgot_password.dart';
+import 'screens/auth/forgot_pswd.dart';
+import 'screens/auth/reset_pswd_with_phone.dart';
 import 'screens/auth/sign_in.dart';
 import 'screens/auth/sign_up.dart';
 import 'utils/constants/texts.dart';
@@ -24,8 +26,12 @@ class App extends StatelessWidget {
       routes: {
         AppTexts.signupScreenRoute: (context) => const SignUpScreen(),
         AppTexts.signinScreenRoute: (context) => const SignInScreen(),
-        AppTexts.forgotPasswordScreenRoute: (context) =>
+        AppTexts.forgotPswdScreenRoute: (context) =>
             const ForgotPasswordScreen(),
+        AppTexts.resetPswdWithEmailRoute: (context) =>
+            const ResetPswdWithEmail(),
+        AppTexts.resetPswdWithPhoneRoute: (context) =>
+            const ResetPswdWithPhone(),
       },
     );
   }

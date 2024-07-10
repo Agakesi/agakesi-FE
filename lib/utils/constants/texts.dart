@@ -52,8 +52,19 @@ class AppTexts {
   static const address = 'Address';
   static const support = 'Support';
 
+  /// FORGOT PASSWORD
+  static const sendToYourEmail = 'Send to your email';
+  static const sendToYourPhoneNumber = 'Send to your phone number';
+  static const resetPassword = 'Reset Password';
+  static const resetWithEmailSubText =
+      'Enter your email, we will send a verification code to email';
+  static const resetWithPhoneSubText =
+      'Enter your phone number,  we will send a verification code to phone number.';
+
   /// ROUTES
   static const signupScreenRoute = '/signup';
   static const signinScreenRoute = '/signin';
-  static const forgotPasswordScreenRoute = '/forgot-password';
+  static const forgotPswdScreenRoute = '/forgot-pswd';
+  static const resetPswdWithEmailRoute = '/reset-pswd-with-email';
+  static const resetPswdWithPhoneRoute = '/reset-pswd-with-phone';
 }

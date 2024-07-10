@@ -170,7 +170,7 @@ class _SignInFormViewState extends State<SignInFormView> {
             child: GestureDetector(
               onTap: () async {
                 await Navigator.of(context)
-                    .pushNamed(AppTexts.forgotPasswordScreenRoute);
+                    .pushNamed(AppTexts.forgotPswdScreenRoute);
               },
               child: const Align(
                 alignment: Alignment.topRight,

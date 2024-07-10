@@ -1,15 +1,16 @@
 import 'package:agakesi_fe/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
+import '../../utils/components/input_tile.dart';
 import '../../utils/constants/colors.dart';
 import '../../utils/constants/texts.dart';
 
-class ForgotPasswordScreen extends StatelessWidget {
-  const ForgotPasswordScreen({super.key});
+class ResetPswdWithPhone extends StatelessWidget {
+  const ResetPswdWithPhone({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -19,11 +20,10 @@ class ForgotPasswordScreen extends StatelessWidget {
               children: <Widget>[
                 const HeaderText(),
                 const SizedBox(height: AppSizes.spaceBtwSections),
-                Column(
-                  children: <Widget>[
-                    OutlinedButton(onPressed: () {}, child: Row()),
-                    OutlinedButton(onPressed: () {}, child: Row())
-                  ],
+                const SizedBox(height: AppSizes.spaceBtwSections),
+                const InputTile(
+                  headerText: AppTexts.phoneNumber,
+                  hintText: AppTexts.enterYourPhoneNumber,
                 )
               ],
             ),
@@ -47,9 +47,9 @@ class HeaderText extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            /// FOERGOT PASSWORD
+            /// RESET PASSWORD
             Text(
-              AppTexts.forgotPassword,
+              AppTexts.resetPassword,
               style: Theme.of(context)
                   .textTheme
                   .headlineMedium
@@ -58,7 +58,7 @@ class HeaderText extends StatelessWidget {
 
             /// HEADER SUB TEXT
             Text(
-              AppTexts.forgotPasswordHeaderSubText,
+              AppTexts.resetWithPhoneSubText,
               style: Theme.of(context)
                   .textTheme
                   .bodySmall

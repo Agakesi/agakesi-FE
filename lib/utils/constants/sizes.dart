@@ -13,6 +13,7 @@ class AppSizes {
   static const iconSm = 16.0;
   static const iconMd = 24.0;
   static const iconLg = 32.0;
+  static const iconBox = 50.0;
 
   // Font sizes
   static const fontsizess = 12.0;
@@ -69,8 +70,4 @@ class AppSizes {
 
   // Grid view spacing
   static const gridViewSpacing = 16.0;
-
-  // Chat
-  static const chatAppBarImageSize = 30;
-  static const chatMsgImageSize = 40;
 }
