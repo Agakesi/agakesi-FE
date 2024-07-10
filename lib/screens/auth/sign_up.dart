@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
+import '../../utils/components/auth_bottom_route_text.dart';
+import '../../utils/components/auth_with_google.dart';
+import '../../utils/components/divider.dart';
 import '../../utils/constants/colors.dart';
 import '../../utils/constants/sizes.dart';
 import '../../utils/constants/texts.dart';
@@ -21,12 +24,27 @@ class SignUpScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 /// HEADER TEXTS
-                SingUpHeaderTexts(),
+                const SingUpHeaderTexts(),
                 const SizedBox(height: AppSizes.spaceBtwItems),
 
                 /// SIGN UN FORM VIEW
-                SignUpFormView(),
+                const SignUpFormView(),
                 const SizedBox(height: AppSizes.spaceBtwSections),
+
+                /// OR WITH DIVIDER
+                const DividerWidget(text: AppTexts.or),
+                const SizedBox(height: AppSizes.spaceBtwSections),
+
+                /// SIGN UP WITH GOOGLE
+                const AuthWithGoogle(text: AppTexts.signUpWithGoogle),
+                const SizedBox(height: AppSizes.spaceBtwSections),
+
+                /// HAVE AN ACCOUNT? LOGIN
+                AuthBottomRouteText(
+                  mainText: AppTexts.haveAnAccount,
+                  authText: AppTexts.login,
+                  authRoute: AppTexts.signinScreenRoute,
+                )
               ],
             ),
           ),
@@ -91,6 +109,7 @@ class _SignUpFormViewState extends State<SignUpFormView> {
   late final TextEditingController _passwordTextController;
 
   bool isObscured = true;
+  bool isChecked = false;
 
   @override
   void initState() {
@@ -158,14 +177,56 @@ class _SignUpFormViewState extends State<SignUpFormView> {
             isObscured: isObscured,
             toggleObscureText: toggleObscureText,
           ),
-          const SizedBox(height: AppSizes.spaceBtwSections),
 
-          /// LOGIN BUTTON
+          /// TERMS AND PRIVACY POLICY
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              /// CHECKBOX
+              Checkbox(
+                value: isChecked,
+                onChanged: (bool? value) {
+                  setState(
+                    () {
+                      isChecked = value!;
+                    },
+                  );
+                },
+              ),
+
+              /// TERM OF SERVICE AND PRIVACY TEXT
+              Expanded(
+                child: RichText(
+                  text: TextSpan(
+                    text: AppTexts.iAgreeToTheCompany,
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodySmall
+                        ?.copyWith(color: AppColors.darkGrey),
+                    children: const <InlineSpan>[
+                      TextSpan(
+                        text: AppTexts.termOfService,
+                        style: TextStyle(color: AppColors.primary),
+                      ),
+                      TextSpan(text: AppTexts.and),
+                      TextSpan(
+                        text: AppTexts.privacyPolicy,
+                        style: TextStyle(color: AppColors.primary),
+                      ),
+                    ],
+                  ),
+                ),
+              )
+            ],
+          ),
+          const SizedBox(height: AppSizes.spaceBtwItems),
+
+          /// CREATE AN ACCOUNT BUTTON
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: () {},
-              child: const Text(AppTexts.login),
+              onPressed: !isChecked ? null : () {},
+              child: const Text(AppTexts.createAnAccount),
             ),
           ),
         ],

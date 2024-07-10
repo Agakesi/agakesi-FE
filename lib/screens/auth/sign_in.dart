@@ -1,6 +1,9 @@
 import 'package:agakesi_fe/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import '../../utils/components/auth_bottom_route_text.dart';
+import '../../utils/components/auth_with_google.dart';
+import '../../utils/components/divider.dart';
 import '../../utils/constants/sizes.dart';
 import '../../utils/constants/texts.dart';
 
@@ -46,41 +49,18 @@ class SignInScreen extends StatelessWidget {
                 const SizedBox(height: AppSizes.spaceBtwSections),
 
                 /// OR WITH DIVIDER
-                const DividerWidget(),
+                const DividerWidget(text: AppTexts.or),
                 const SizedBox(height: AppSizes.spaceBtwSections),
 
                 /// LOGIN WITH GOOGLE
-                const LoginWithGoogle(),
+                const AuthWithGoogle(text: AppTexts.loginWithGoogle),
                 const SizedBox(height: AppSizes.spaceBtwSections),
 
                 /// DON'T HAVE ACCOUNT? SIGNUP
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      AppTexts.dontHaveAnAccount,
-                      style: Theme.of(context)
-                          .textTheme
-                          .titleMedium
-                          ?.copyWith(color: AppColors.darkerGrey),
-                    ),
-                    const SizedBox(width: AppSizes.xs),
-
-                    /// SIGNUP TEXT
-                    GestureDetector(
-                      onTap: () async {
-                        await Navigator.of(context)
-                            .pushNamed(AppTexts.signupScreenRoute);
-                      },
-                      child: Text(
-                        AppTexts.signup,
-                        style: Theme.of(context)
-                            .textTheme
-                            .titleMedium
-                            ?.copyWith(color: AppColors.primary),
-                      ),
-                    ),
-                  ],
+                const AuthBottomRouteText(
+                  mainText: AppTexts.dontHaveAnAccount,
+                  authText: AppTexts.signup,
+                  authRoute: AppTexts.signupScreenRoute,
                 )
               ],
             ),
@@ -207,82 +187,6 @@ class _SignInFormViewState extends State<SignInFormView> {
           ),
         ],
       ),
-    );
-  }
-}
-
-class LoginWithGoogle extends StatelessWidget {
-  const LoginWithGoogle({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      child: OutlinedButton(
-        onPressed: () {},
-        style: OutlinedButton.styleFrom(
-          side: const BorderSide(
-            color: AppColors.darkGrey,
-            width: 1,
-          ), // Border color and width
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(AppSizes.sm),
-          ),
-        ),
-        child: const Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(
-              height: AppSizes.iconMd,
-              width: AppSizes.iconMd,
-              child: Image(
-                image: AssetImage(
-                  AppTexts.googleIconPath,
-                ),
-              ),
-            ),
-            SizedBox(width: AppSizes.sm),
-            Text(AppTexts.loginWithGoogle),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class DividerWidget extends StatelessWidget {
-  const DividerWidget({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: <Widget>[
-        const Flexible(
-          child: Divider(
-            color: AppColors.grey,
-            thickness: 0.5,
-            indent: 5,
-            endIndent: 20,
-          ),
-        ),
-        Text(AppTexts.or,
-            style: Theme.of(context)
-                .textTheme
-                .titleSmall
-                ?.copyWith(color: AppColors.darkGrey)),
-        const Flexible(
-          child: Divider(
-            color: AppColors.grey,
-            thickness: 0.5,
-            indent: 20,
-            endIndent: 5,
-          ),
-        )
-      ],
     );
   }
 }

@@ -2,75 +2,75 @@ class AppSizes {
   AppSizes._();
 
   // Padding and margin sizes
-  static const double xs = 4.0;
-  static const double sm = 8.0;
-  static const double md = 16.0;
-  static const double lg = 24.0;
-  static const double xl = 32.0;
+  static const xs = 4.0;
+  static const sm = 8.0;
+  static const md = 16.0;
+  static const lg = 24.0;
+  static const xl = 32.0;
 
   // Icon sizes
-  static const double iconXs = 12.0;
-  static const double iconSm = 16.0;
-  static const double iconMd = 24.0;
-  static const double iconLg = 32.0;
+  static const iconXs = 12.0;
+  static const iconSm = 16.0;
+  static const iconMd = 24.0;
+  static const iconLg = 32.0;
 
   // Font sizes
-  static const double fontsizess = 12.0;
-  static const double fontSizeSm = 14.0;
-  static const double fontSizeMd = 16.0;
-  static const double fontSizeLg = 18.0;
+  static const fontsizess = 12.0;
+  static const fontSizeSm = 14.0;
+  static const fontSizeMd = 16.0;
+  static const fontSizeLg = 18.0;
 
   // Button sizes
-  static const double buttonHeight = 18.0;
-  static const double buttonRadius = 12.0;
-  static const double buttonWidth = 120.0;
-  static const double buttonElevation = 4.0;
+  static const buttonHeight = 18.0;
+  static const buttonRadius = 12.0;
+  static const buttonWidth = 120.0;
+  static const buttonElevation = 4.0;
 
   // AppBar height
-  static const double appBarHeight = 56.0;
+  static const appBarHeight = 56.0;
 
   // Image sizes
-  static const double imageThumbSize = 80.0;
+  static const imageThumbSize = 80.0;
 
   // Default spacing between sections
-  static const double defaultSpace = 24.0;
-  static const double spaceBtwItems = 16.0;
-  static const double spaceBtwSections = 32.0;
+  static const defaultSpace = 24.0;
+  static const spaceBtwItems = 16.0;
+  static const spaceBtwSections = 32.0;
 
   // Border radius
-  static const double borderRadiusSm = 4.0;
-  static const double borderRadiusMd = 8.0;
-  static const double borderRadiusLg = 12.0;
+  static const borderRadiusSm = 4.0;
+  static const borderRadiusMd = 8.0;
+  static const borderRadiusLg = 12.0;
 
   // Divider height
-  static const double dividerHeight = 1.0;
+  static const dividerHeight = 1.0;
 
   // Product item dimensions
-  static const double productImageSize = 120.0;
-  static const double productImageRadius = 16.0;
-  static const double productItemHeight = 160.0;
+  static const productImageSize = 120.0;
+  static const productImageRadius = 16.0;
+  static const productItemHeight = 160.0;
 
   // Input field
-  static const double inputFieldRadius = 12.0;
-  static const double spaceBtwInputFields = 16.0;
+  static const inputFieldRadius = 12.0;
+  static const spaceBtwInputFields = 16.0;
 
   // Card sizes
-  static const double cardRadiusLg = 16.0;
-  static const double cardRadiusMd = 12.0;
-  static const double cardRadiusSm = 10.0;
-  static const double cardRadiusXs = 6.0;
-  static const double cardElevation = 2.0;
+  static const cardRadiusLg = 16.0;
+  static const cardRadiusMd = 12.0;
+  static const cardRadiusSm = 10.0;
+  static const cardRadiusXs = 6.0;
+  static const cardElevation = 2.0;
 
   // Image carousel height
-  static const double imageCarouselHeight = 200.0;
+  static const imageCarouselHeight = 200.0;
 
   // Loading indicator size
-  static const double loadingIndicatorSize = 36.0;
+  static const loadingIndicatorSize = 36.0;
 
   // Grid view spacing
-  static const double gridViewSpacing = 16.0;
+  static const gridViewSpacing = 16.0;
 
   // Chat
-  static const double chatAppBarImageSize = 30;
-  static const double chatMsgImageSize = 40;
+  static const chatAppBarImageSize = 30;
+  static const chatMsgImageSize = 40;
 }
