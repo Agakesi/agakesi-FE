@@ -40,7 +40,10 @@ class AuthWithGoogle extends StatelessWidget {
               ),
             ),
             const SizedBox(width: AppSizes.sm),
-            Text(text),
+            Text(
+              text,
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
           ],
         ),
       ),

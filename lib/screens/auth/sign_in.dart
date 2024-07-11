@@ -26,18 +26,13 @@ class SignInScreen extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      AppTexts.welcomeBack,
-                      style: Theme.of(context)
-                          .textTheme
-                          .headlineMedium
-                          ?.copyWith(fontWeight: FontWeight.w700),
-                    ),
+                    Text(AppTexts.welcomeBack,
+                        style: Theme.of(context).textTheme.headlineMedium),
                     Text(
                       AppTexts.welcomeBackExplore,
                       style: Theme.of(context)
                           .textTheme
-                          .bodySmall
+                          .titleMedium
                           ?.copyWith(color: AppColors.darkGrey),
                     )
                   ],
@@ -112,22 +107,13 @@ class _SignInFormViewState extends State<SignInFormView> {
           /// EMAIL
           Padding(
             padding: const EdgeInsets.only(bottom: AppSizes.sm),
-            child: Text(
-              AppTexts.email,
-              style: Theme.of(context)
-                  .textTheme
-                  .bodyLarge
-                  ?.copyWith(fontWeight: FontWeight.w600),
-            ),
+            child: Text(AppTexts.email,
+                style: Theme.of(context).textTheme.bodyLarge),
           ),
           TextFormField(
             decoration: InputDecoration(
-              hintText: AppTexts.enterYourEmailAddress,
-              hintStyle: Theme.of(context)
-                  .textTheme
-                  .bodySmall
-                  ?.copyWith(color: AppColors.darkGrey),
-            ),
+                hintText: AppTexts.enterYourEmailAddress,
+                hintStyle: Theme.of(context).textTheme.bodySmall),
           ),
           const SizedBox(height: AppSizes.spaceBtwItems),
 
@@ -172,11 +158,14 @@ class _SignInFormViewState extends State<SignInFormView> {
                 await Navigator.of(context)
                     .pushNamed(AppTexts.forgotPswdScreenRoute);
               },
-              child: const Align(
+              child: Align(
                 alignment: Alignment.topRight,
                 child: Text(
                   AppTexts.forgotPassword,
-                  style: TextStyle(color: AppColors.primary),
+                  style: Theme.of(context)
+                      .textTheme
+                      .labelLarge
+                      ?.copyWith(color: AppColors.primary),
                 ),
               ),
             ),
@@ -188,7 +177,11 @@ class _SignInFormViewState extends State<SignInFormView> {
             width: double.infinity,
             child: ElevatedButton(
               onPressed: () {},
-              child: const Text(AppTexts.login),
+              child: Text(AppTexts.login,
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleMedium
+                      ?.copyWith(color: AppColors.white)),
             ),
           ),
         ],
