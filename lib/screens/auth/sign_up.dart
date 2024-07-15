@@ -43,7 +43,7 @@ class SignUpScreen extends StatelessWidget {
                 AuthBottomRouteText(
                   mainText: AppTexts.haveAnAccount,
                   authText: AppTexts.login,
-                  authRoute: AppTexts.signinScreenRoute,
+                  authRoute: AppTexts.signinRoute,
                 )
               ],
             ),

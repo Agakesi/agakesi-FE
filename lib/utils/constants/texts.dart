@@ -29,6 +29,7 @@ class AppTexts {
   static const haveAnAccount = 'Have an account?';
   static const loginWithGoogle = 'Login with Google';
   static const signUpWithGoogle = 'Sign Up with Google';
+  static const done = 'Done';
   static const or = 'OR';
 
   /// HINTTEXTS
@@ -56,15 +57,23 @@ class AppTexts {
   static const sendToYourEmail = 'Send to your email';
   static const sendToYourPhoneNumber = 'Send to your phone number';
   static const resetPassword = 'Reset Password';
+  static const verifyCode = 'Verify Code';
+  static const verifyCodeSubText =
+      'Please enter the code we just sent to email timsmxxx@email.com.';
+  static const newPassword = 'New Password';
+  static const newPasswordSubText =
+      'Create a new password that is safe and easy to remember.';
   static const resetWithEmailSubText =
       'Enter your email, we will send a verification code to email';
   static const resetWithPhoneSubText =
       'Enter your phone number,  we will send a verification code to phone number.';
 
   /// ROUTES
-  static const signupScreenRoute = '/signup';
-  static const signinScreenRoute = '/signin';
-  static const forgotPswdScreenRoute = '/forgot-pswd';
+  static const signupRoute = '/signup';
+  static const signinRoute = '/signin';
+  static const forgotPswdRoute = '/forgot-pswd';
   static const resetPswdWithEmailRoute = '/reset-pswd-with-email';
   static const resetPswdWithPhoneRoute = '/reset-pswd-with-phone';
+  static const verifyCodeRoute = '/verify-code';
+  static const newPswdRoute = '/new-pswd';
 }

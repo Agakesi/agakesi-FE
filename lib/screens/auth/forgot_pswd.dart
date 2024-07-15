@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import '../../utils/constants/colors.dart';
 import '../../utils/constants/texts.dart';
 
-class ForgotPasswordScreen extends StatelessWidget {
-  const ForgotPasswordScreen({super.key});
+class ForgotPswdScreen extends StatelessWidget {
+  const ForgotPswdScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -152,10 +152,9 @@ class HeaderText extends StatelessWidget {
             /// HEADER SUB TEXT
             Text(
               AppTexts.forgotPasswordHeaderSubText,
-              style: Theme.of(context)
-                  .textTheme
-                  .bodySmall
-                  ?.copyWith(color: AppColors.darkGrey),
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                fontVariations: [const FontVariation('opsz', 16.0)],
+              ),
             ),
           ],
         )

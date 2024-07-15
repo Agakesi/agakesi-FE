@@ -1,12 +1,11 @@
 import 'package:agakesi_fe/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
-import '../../utils/components/input_tile.dart';
 import '../../utils/constants/colors.dart';
 import '../../utils/constants/texts.dart';
 
-class ResetPswdWithPhone extends StatelessWidget {
-  const ResetPswdWithPhone({super.key});
+class VerifyCode extends StatelessWidget {
+  const VerifyCode({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,14 +17,9 @@ class ResetPswdWithPhone extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                const HeaderText(),
-                const SizedBox(height: AppSizes.spaceBtwSections),
-                const SizedBox(height: AppSizes.spaceBtwSections),
-                InputTile(
-                  headerText: AppTexts.phoneNumber,
-                  hintText: AppTexts.enterYourPhoneNumber,
-                  destRoute: AppTexts.verifyCodeRoute,
-                )
+                HeaderText(),
+                SizedBox(height: AppSizes.spaceBtwSections),
+                SizedBox(height: AppSizes.spaceBtwSections),
               ],
             ),
           ),
@@ -50,7 +44,7 @@ class HeaderText extends StatelessWidget {
           children: <Widget>[
             /// RESET PASSWORD
             Text(
-              AppTexts.resetPassword,
+              AppTexts.verifyCode,
               style: Theme.of(context)
                   .textTheme
                   .headlineMedium
@@ -59,7 +53,7 @@ class HeaderText extends StatelessWidget {
 
             /// HEADER SUB TEXT
             Text(
-              AppTexts.resetWithPhoneSubText,
+              AppTexts.verifyCodeSubText,
               style: Theme.of(context).textTheme.bodySmall?.copyWith(
                 color: AppColors.darkGrey,
                 fontVariations: [

@@ -55,7 +55,7 @@ class SignInScreen extends StatelessWidget {
                 const AuthBottomRouteText(
                   mainText: AppTexts.dontHaveAnAccount,
                   authText: AppTexts.signup,
-                  authRoute: AppTexts.signupScreenRoute,
+                  authRoute: AppTexts.signupRoute,
                 )
               ],
             ),
@@ -155,8 +155,7 @@ class _SignInFormViewState extends State<SignInFormView> {
             padding: const EdgeInsets.only(top: AppSizes.sm),
             child: GestureDetector(
               onTap: () async {
-                await Navigator.of(context)
-                    .pushNamed(AppTexts.forgotPswdScreenRoute);
+                await Navigator.of(context).pushNamed(AppTexts.forgotPswdRoute);
               },
               child: Align(
                 alignment: Alignment.topRight,

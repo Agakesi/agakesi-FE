@@ -8,10 +8,12 @@ class InputTile extends StatelessWidget {
     super.key,
     required this.headerText,
     required this.hintText,
+    this.destRoute,
   });
 
   final String headerText;
   final String hintText;
+  final String? destRoute;
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +38,11 @@ class InputTile extends StatelessWidget {
                 .bodySmall
                 ?.copyWith(color: AppColors.darkGrey),
           ),
+          onFieldSubmitted: (value) async {
+            if (destRoute != null) {
+              await Navigator.of(context).pushNamed(destRoute!);
+            }
+          },
         ),
       ],
     );

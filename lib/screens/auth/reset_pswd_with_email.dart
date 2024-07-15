@@ -1,8 +1,7 @@
 import 'package:agakesi_fe/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
-
-import '../../utils/components/input_tile.dart';
 import '../../utils/constants/colors.dart';
+import '../../utils/components/input_tile.dart';
 import '../../utils/constants/texts.dart';
 
 class ResetPswdWithEmail extends StatelessWidget {
@@ -24,6 +23,7 @@ class ResetPswdWithEmail extends StatelessWidget {
                 const InputTile(
                   headerText: AppTexts.email,
                   hintText: AppTexts.enterYourEmailAddress,
+                  destRoute: AppTexts.newPswdRoute,
                 )
               ],
             ),
@@ -59,10 +59,12 @@ class HeaderText extends StatelessWidget {
             /// HEADER SUB TEXT
             Text(
               AppTexts.resetWithEmailSubText,
-              style: Theme.of(context)
-                  .textTheme
-                  .bodySmall
-                  ?.copyWith(color: AppColors.darkGrey),
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                color: AppColors.darkGrey,
+                fontVariations: [
+                  const FontVariation('opsz', 16.0),
+                ],
+              ),
             ),
           ],
         )

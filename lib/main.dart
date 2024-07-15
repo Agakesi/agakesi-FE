@@ -1,4 +1,6 @@
+import 'package:agakesi_fe/screens/auth/new_pswd.dart';
 import 'package:agakesi_fe/screens/auth/reset_pswd_with_email.dart';
+import 'package:agakesi_fe/screens/auth/verify_code.dart';
 import 'package:flutter/material.dart';
 import 'screens/auth/forgot_pswd.dart';
 import 'screens/auth/reset_pswd_with_phone.dart';
@@ -24,14 +26,15 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: const SignInScreen(),
       routes: {
-        AppTexts.signupScreenRoute: (context) => const SignUpScreen(),
-        AppTexts.signinScreenRoute: (context) => const SignInScreen(),
-        AppTexts.forgotPswdScreenRoute: (context) =>
-            const ForgotPasswordScreen(),
+        AppTexts.signupRoute: (context) => const SignUpScreen(),
+        AppTexts.signinRoute: (context) => const SignInScreen(),
+        AppTexts.forgotPswdRoute: (context) => const ForgotPswdScreen(),
         AppTexts.resetPswdWithEmailRoute: (context) =>
             const ResetPswdWithEmail(),
         AppTexts.resetPswdWithPhoneRoute: (context) =>
             const ResetPswdWithPhone(),
+        AppTexts.verifyCodeRoute: (context) => const VerifyCode(),
+        AppTexts.newPswdRoute: (context) => const NewPassword(),
       },
     );
   }

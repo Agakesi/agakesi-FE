@@ -5,12 +5,12 @@ import '../../utils/components/input_tile.dart';
 import '../../utils/constants/colors.dart';
 import '../../utils/constants/texts.dart';
 
-class ResetPswdWithPhone extends StatelessWidget {
-  const ResetPswdWithPhone({super.key});
+class NewPassword extends StatelessWidget {
+  const NewPassword({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -20,12 +20,25 @@ class ResetPswdWithPhone extends StatelessWidget {
               children: <Widget>[
                 const HeaderText(),
                 const SizedBox(height: AppSizes.spaceBtwSections),
-                const SizedBox(height: AppSizes.spaceBtwSections),
-                InputTile(
-                  headerText: AppTexts.phoneNumber,
-                  hintText: AppTexts.enterYourPhoneNumber,
-                  destRoute: AppTexts.verifyCodeRoute,
-                )
+                const InputTile(
+                  headerText: AppTexts.password,
+                  hintText: AppTexts.enterYourPassword,
+                ),
+                const SizedBox(height: AppSizes.spaceBtwItems),
+                const InputTile(
+                  headerText: AppTexts.confirmPassword,
+                  hintText: AppTexts.retypeYourPassword,
+                ),
+                const SizedBox(height: AppSizes.spaceBtwSections * 4),
+
+                /// CREATE AN ACCOUNT BUTTON
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: const Text(AppTexts.done),
+                  ),
+                ),
               ],
             ),
           ),
@@ -50,7 +63,7 @@ class HeaderText extends StatelessWidget {
           children: <Widget>[
             /// RESET PASSWORD
             Text(
-              AppTexts.resetPassword,
+              AppTexts.newPassword,
               style: Theme.of(context)
                   .textTheme
                   .headlineMedium
@@ -59,7 +72,7 @@ class HeaderText extends StatelessWidget {
 
             /// HEADER SUB TEXT
             Text(
-              AppTexts.resetWithPhoneSubText,
+              AppTexts.newPasswordSubText,
               style: Theme.of(context).textTheme.bodySmall?.copyWith(
                 color: AppColors.darkGrey,
                 fontVariations: [
