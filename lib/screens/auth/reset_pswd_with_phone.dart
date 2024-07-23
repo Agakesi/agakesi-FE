@@ -10,7 +10,7 @@ class ResetPswdWithPhone extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -19,13 +19,25 @@ class ResetPswdWithPhone extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 const HeaderText(),
-                const SizedBox(height: AppSizes.spaceBtwSections),
-                const SizedBox(height: AppSizes.spaceBtwSections),
-                InputTile(
+                const SizedBox(height: AppSizes.spaceBtwSections * 2),
+                const InputTile(
                   headerText: AppTexts.phoneNumber,
                   hintText: AppTexts.enterYourPhoneNumber,
                   destRoute: AppTexts.verifyCodeRoute,
-                )
+                ),
+                const SizedBox(height: AppSizes.spaceBtwSections * 4),
+
+                /// CONTINUE
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () async {
+                      await Navigator.of(context)
+                          .pushNamed(AppTexts.verifyCodeRoute);
+                    },
+                    child: const Text(AppTexts.contnue),
+                  ),
+                ),
               ],
             ),
           ),

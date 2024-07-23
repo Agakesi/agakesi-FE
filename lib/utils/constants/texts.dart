@@ -30,7 +30,9 @@ class AppTexts {
   static const loginWithGoogle = 'Login with Google';
   static const signUpWithGoogle = 'Sign Up with Google';
   static const done = 'Done';
+  static const contnue = 'Continue';
   static const or = 'OR';
+  static const submitOTP = 'Submit OTP';
 
   /// HINTTEXTS
   static const enterYourPassword = 'Enter your password';
@@ -67,6 +69,8 @@ class AppTexts {
       'Enter your email, we will send a verification code to email';
   static const resetWithPhoneSubText =
       'Enter your phone number,  we will send a verification code to phone number.';
+  static const pswdResetSuccess = 'Password Reset Successfully!';
+  static const pswdResetSuccessSubText = 'Please proceed to login';
 
   /// ROUTES
   static const signupRoute = '/signup';
@@ -76,4 +80,5 @@ class AppTexts {
   static const resetPswdWithPhoneRoute = '/reset-pswd-with-phone';
   static const verifyCodeRoute = '/verify-code';
   static const newPswdRoute = '/new-pswd';
+  static const newPswdSuccessRoute = '/new-pswd-success';
 }

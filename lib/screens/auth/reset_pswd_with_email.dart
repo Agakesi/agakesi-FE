@@ -9,7 +9,7 @@ class ResetPswdWithEmail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -18,13 +18,25 @@ class ResetPswdWithEmail extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 const HeaderText(),
-                const SizedBox(height: AppSizes.spaceBtwSections),
-                const SizedBox(height: AppSizes.spaceBtwSections),
+                const SizedBox(height: AppSizes.spaceBtwSections * 2),
                 const InputTile(
                   headerText: AppTexts.email,
                   hintText: AppTexts.enterYourEmailAddress,
-                  destRoute: AppTexts.newPswdRoute,
-                )
+                  destRoute: AppTexts.verifyCodeRoute,
+                ),
+                const SizedBox(height: AppSizes.spaceBtwSections * 4),
+
+                /// CONTINUE
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () async {
+                      await Navigator.of(context)
+                          .pushNamed(AppTexts.verifyCodeRoute);
+                    },
+                    child: const Text(AppTexts.contnue),
+                  ),
+                ),
               ],
             ),
           ),

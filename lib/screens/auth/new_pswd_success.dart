@@ -1,17 +1,16 @@
 import 'package:agakesi_fe/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
-import '../../utils/components/input_pswd_tile.dart';
 import '../../utils/constants/colors.dart';
 import '../../utils/constants/texts.dart';
 
-class NewPassword extends StatefulWidget {
-  const NewPassword({super.key});
+class NewPasswordSuccess extends StatefulWidget {
+  const NewPasswordSuccess({super.key});
 
   @override
-  State<NewPassword> createState() => _NewPasswordState();
+  State<NewPasswordSuccess> createState() => _NewPasswordSuccessState();
 }
 
-class _NewPasswordState extends State<NewPassword> {
+class _NewPasswordSuccessState extends State<NewPasswordSuccess> {
   late TextEditingController _passwordTextController;
   bool pswdIsObscured = true;
   bool confirmPswdIsObscured = true;
@@ -50,36 +49,18 @@ class _NewPasswordState extends State<NewPassword> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                const HeaderText(),
-                const SizedBox(height: AppSizes.spaceBtwSections),
+                const Center(child: CircleWithCheckIcon()),
+                const SizedBox(height: AppSizes.spaceBtwSections * 6),
 
-                /// PASSWORD
-                InputPasswordTile(
-                  headerText: AppTexts.password,
-                  hintText: AppTexts.enterYourPassword,
-                  isObscured: pswdIsObscured,
-                  toggleObscureText: toggleObscurePswdText,
-                ),
-                const SizedBox(height: AppSizes.spaceBtwItems),
-
-                /// CONFIRM PASSWORD
-                InputPasswordTile(
-                  headerText: AppTexts.confirmPassword,
-                  hintText: AppTexts.retypeYourPassword,
-                  isObscured: confirmPswdIsObscured,
-                  toggleObscureText: toggleObscureConfirmPswdText,
-                ),
-                const SizedBox(height: AppSizes.spaceBtwSections * 5),
-
-                /// DONE
+                /// LOGIN BUTTON
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () async {
                       await Navigator.of(context)
-                          .pushNamed(AppTexts.newPswdSuccessRoute);
+                          .pushNamed(AppTexts.signinRoute);
                     },
-                    child: const Text(AppTexts.done),
+                    child: const Text(AppTexts.login),
                   ),
                 ),
               ],
@@ -106,7 +87,7 @@ class HeaderText extends StatelessWidget {
           children: <Widget>[
             /// RESET PASSWORD
             Text(
-              AppTexts.newPassword,
+              AppTexts.pswdResetSuccess,
               style: Theme.of(context)
                   .textTheme
                   .headlineMedium
@@ -115,7 +96,7 @@ class HeaderText extends StatelessWidget {
 
             /// HEADER SUB TEXT
             Text(
-              AppTexts.newPasswordSubText,
+              AppTexts.pswdResetSuccessSubText,
               style: Theme.of(context).textTheme.bodySmall?.copyWith(
                 color: AppColors.darkGrey,
                 fontVariations: [
@@ -126,6 +107,33 @@ class HeaderText extends StatelessWidget {
           ],
         )
       ],
+    );
+  }
+}
+
+class CircleWithCheckIcon extends StatelessWidget {
+  const CircleWithCheckIcon({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 285,
+      height:
+          285, // Ensure the container is a circle by setting equal width and height
+      decoration: BoxDecoration(
+        color: const Color.fromRGBO(98, 200, 134, 0.2), // Fill color
+        shape: BoxShape.circle,
+        border: Border.all(
+          color: const Color(0xFF5FD788), // Border color
+          width: 2, // Border width
+        ),
+      ),
+      child: const Center(
+        child: Icon(
+          Icons.check,
+          size: 147.1,
+          color: Color(0xFF5FD788), // Adjust the color if needed
+        ),
+      ),
     );
   }
 }

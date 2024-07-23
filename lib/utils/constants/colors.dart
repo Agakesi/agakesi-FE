@@ -25,7 +25,8 @@ class AppColors {
   // Button colors
   static const buttonPrimary = Color.fromRGBO(56, 28, 114, 1);
   static const buttonSecondary = Color.fromRGBO(51, 51, 51, 1);
-  static const buttonDisabled = Color(0xFF4F4F4F);
+  // static const buttonDisabled = Color(0xFF4F4F4F);
+  static const buttonDisabled = Color.fromARGB(1, 125, 176, 253);
 
   // Border colors
   static const borderPrimary = Color(0xFFD9D9D9);

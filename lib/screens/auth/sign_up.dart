@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
-
 import '../../utils/components/auth_bottom_route_text.dart';
 import '../../utils/components/auth_with_google.dart';
 import '../../utils/components/divider.dart';
+import '../../utils/components/input_pswd_tile.dart';
 import '../../utils/constants/colors.dart';
 import '../../utils/constants/sizes.dart';
 import '../../utils/constants/texts.dart';
@@ -108,7 +107,8 @@ class _SignUpFormViewState extends State<SignUpFormView> {
   late final TextEditingController _emailTextController;
   late final TextEditingController _passwordTextController;
 
-  bool isObscured = true;
+  bool pswdIsObscured = true;
+  bool confirmPswdIsObscured = true;
   bool isChecked = false;
 
   @override
@@ -125,9 +125,15 @@ class _SignUpFormViewState extends State<SignUpFormView> {
     super.dispose();
   }
 
-  void toggleObscureText() {
+  void toggleObscurePswdText() {
     setState(() {
-      isObscured = !isObscured;
+      pswdIsObscured = !pswdIsObscured;
+    });
+  }
+
+  void toggleObscureConfirmPswdText() {
+    setState(() {
+      confirmPswdIsObscured = !confirmPswdIsObscured;
     });
   }
 
@@ -165,8 +171,8 @@ class _SignUpFormViewState extends State<SignUpFormView> {
           InputPasswordTile(
             headerText: AppTexts.password,
             hintText: AppTexts.enterYourPassword,
-            isObscured: isObscured,
-            toggleObscureText: toggleObscureText,
+            isObscured: pswdIsObscured,
+            toggleObscureText: toggleObscurePswdText,
           ),
           const SizedBox(height: AppSizes.spaceBtwItems),
 
@@ -174,8 +180,8 @@ class _SignUpFormViewState extends State<SignUpFormView> {
           InputPasswordTile(
             headerText: AppTexts.confirmPassword,
             hintText: AppTexts.retypeYourPassword,
-            isObscured: isObscured,
-            toggleObscureText: toggleObscureText,
+            isObscured: confirmPswdIsObscured,
+            toggleObscureText: toggleObscureConfirmPswdText,
           ),
 
           /// TERMS AND PRIVACY POLICY
@@ -231,57 +237,6 @@ class _SignUpFormViewState extends State<SignUpFormView> {
           ),
         ],
       ),
-    );
-  }
-}
-
-class InputPasswordTile extends StatelessWidget {
-  const InputPasswordTile({
-    super.key,
-    required this.headerText,
-    required this.hintText,
-    required this.isObscured,
-    required this.toggleObscureText,
-  });
-
-  final String headerText;
-  final String hintText;
-  final bool isObscured;
-  final VoidCallback toggleObscureText;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.only(bottom: AppSizes.sm),
-          child: Text(
-            headerText,
-            style: Theme.of(context)
-                .textTheme
-                .bodyLarge
-                ?.copyWith(fontWeight: FontWeight.w600),
-          ),
-        ),
-        TextFormField(
-          obscureText: isObscured,
-          decoration: InputDecoration(
-            hintText: hintText,
-            hintStyle: Theme.of(context)
-                .textTheme
-                .bodySmall
-                ?.copyWith(color: AppColors.darkGrey),
-            suffixIcon: IconButton(
-              onPressed: toggleObscureText,
-              icon: isObscured
-                  ? const Icon(Iconsax.eye_slash)
-                  : const Icon(Iconsax.eye),
-            ),
-            suffixIconColor: const Color(0xFF9CA3AF),
-          ),
-        ),
-      ],
     );
   }
 }
